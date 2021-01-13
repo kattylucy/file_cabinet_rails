@@ -1,8 +1,9 @@
 class DocsController < ApplicationController
-    #runs ahead of other actions
+    #runs ahead of other actions and limit the def to only certain actions
     before_action :find_doc, only: [:show, :edit, :update, :destroy]
 
     def index
+        @docs = Doc.all.order("created_at DESC")
     end
 
     def show

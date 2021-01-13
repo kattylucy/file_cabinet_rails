@@ -1,1 +1,4 @@
-%h1 doc view
+- @docs.each do |doc|
+    %h1= doc.title
+    %p= truncate(doc.content, lengh: 50)
+    %span= "Created #{time_ago_in_words(doc.created_at)} ago"
