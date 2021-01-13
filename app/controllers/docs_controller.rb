@@ -3,7 +3,7 @@ class DocsController < ApplicationController
     end
 
     def show
-        @doc = Doc.find(params[:id])
+        @doc = find_doc
     end
 
     def new
@@ -31,6 +31,7 @@ class DocsController < ApplicationController
     private
 
         def find_doc
+            Doc.find(params[:id])
         end
 
         def doc_params
