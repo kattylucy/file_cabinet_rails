@@ -1,4 +1,6 @@
 - @docs.each do |doc|
-    %h1= doc.title
+    %h1= link_to doc.title, doc
     %p= truncate(doc.content, lengh: 50)
-    %span= "Created #{time_ago_in_words(doc.created_at)} ago"
+    %span= "Created #{time_ago_in_words(doc.created_at)} ago" 
+
+= link_to "Create new doc", new_doc_path
